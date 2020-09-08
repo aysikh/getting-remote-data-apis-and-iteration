@@ -24,14 +24,7 @@ def get_json(films_array)
     films_array.map do |film_url|
       response = RestClient.get(film_url)
       json_info = JSON.parse(response)
-      json_info["title"]
     end
-end
-
-def movie_info_hash(films_array, titles)
-  movie_info = Hash.new
-  movie_info = {:films_array => [], :titles => []}
-  titles 
 end
 
 def get_character_movies_from_api(character_name)
@@ -51,7 +44,9 @@ end
 
 
 def print_movies(films)
-  # some iteration magic and puts out the movies in a nice list
+  films.each do |single_film| #films is a hash, single_fiml is an array
+    puts "The movie name is #{single_film["title"]} and the director of this movie is #{single_film["director"]}."
+  end
 end
 
 def show_character_movies(character)
