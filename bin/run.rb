@@ -5,4 +5,8 @@ require_relative "../lib/command_line_interface.rb"
 
 welcome
 character = get_character_from_user
-show_character_movies(character)
+# show_character_movies(character)
+
+get_character_movies_from_api(character)
+# web_urls(character_name)
+# pp get_json(films_array)
